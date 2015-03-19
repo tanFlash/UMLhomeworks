@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="a561e60b-d271-4084-9bb0-7683170d2b1c" name="Activity1" linkedPackageId="b7f18c75-f6a8-4dbf-8155-99d93c3cecad" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
+  <packagedElements>
+    <activityRootModelHasActivity>
+      <activity Id="4ff2d906-ab0c-4539-a6db-cc2d72b69ad2" name="Activity1" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
+        <elementDefinition Id="db8f2e58-17a4-4605-b9e0-e5e58f2cd227" />
+        <nodes>
+          <initialNode Id="2538a8ae-1f51-4f06-8f19-952ee0ba5260" name="Initial1" isLeaf="false">
+            <elementDefinition Id="40ab47ab-4511-45d9-8caf-1a0bc97c551b" />
+            <flowNodeTargets>
+              <controlFlow Id="307c833a-608a-41a6-b162-3b91611abfed" isLeaf="false">
+                <opaqueActionMoniker Id="a0a56331-6395-467f-b3fb-d1e926de1cab" LastKnownName="Receive the request for order" />
+                <elementDefinition Id="5217c8b1-c24e-4279-8388-4033b02ec288" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction Id="a0a56331-6395-467f-b3fb-d1e926de1cab" name="Receive the request for order" isLeaf="false">
+            <elementDefinition Id="8f7b1dcc-1f03-481d-b646-6de2ba20868f" />
+            <flowNodeTargets>
+              <controlFlow Id="1415a837-906b-4825-b678-dd26f4ccc107" isLeaf="false">
+                <opaqueActionMoniker Id="7499547b-f58b-4e39-a2ed-b201b6f1b008" LastKnownName="Show the menu" />
+                <elementDefinition Id="3bcb4f26-1320-48e2-bcfc-3ef39050b77f" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="7499547b-f58b-4e39-a2ed-b201b6f1b008" name="Show the menu" isLeaf="false">
+            <elementDefinition Id="795fd22b-985a-4308-b2c4-156e1a4d13af" />
+            <flowNodeTargets>
+              <controlFlow Id="8e8576c9-ec1c-45ed-9cc2-a7e949bdcd69" isLeaf="false">
+                <opaqueActionMoniker Id="b748cd76-86da-4b3f-96a4-ac9e7b18fcbe" LastKnownName="Get the order" />
+                <elementDefinition Id="db289d9f-aef1-4fad-8f9e-90b3b1e59390" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="b748cd76-86da-4b3f-96a4-ac9e7b18fcbe" name="Get the order" isLeaf="false">
+            <elementDefinition Id="4ddb5e30-cddf-4c29-b21c-00eafdbe9e20" />
+            <flowNodeTargets>
+              <controlFlow Id="c1fc684a-465e-4519-956a-8015b79a9c82" isLeaf="false">
+                <decisionNodeMoniker Id="0bec48c0-ecb1-40e2-82f8-02eb70880076" LastKnownName="Decision1" />
+                <elementDefinition Id="a3b6978a-6756-4639-bfd4-0929dde4acb9" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="0bec48c0-ecb1-40e2-82f8-02eb70880076" name="Decision1" isLeaf="false">
+            <elementDefinition Id="53ae6f9c-fe38-47e6-8db6-f808ad9c60e9" />
+            <flowNodeTargets>
+              <controlFlow Id="3d60c181-76a7-4515-8845-e3351881ee22" guard="everything in the order list is available" isLeaf="false">
+                <opaqueActionMoniker Id="b0ce8bec-f75d-4610-a5e7-021f1523d0e0" LastKnownName="Count the cost" />
+                <elementDefinition Id="28b50589-f7da-47ce-a71c-e20ee677774f" />
+              </controlFlow>
+              <controlFlow Id="2af5f541-bd9a-4cd1-880f-481254b3fd5e" guard="something in the menu is not available" isLeaf="false">
+                <opaqueActionMoniker Id="8f6a1214-2a0b-45a2-beb7-ef6ea3fc25b4" LastKnownName="Inform what is not avaible at the moment" />
+                <elementDefinition Id="b9655d52-4fd4-4af8-be96-83794d3fa6f6" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction Id="b0ce8bec-f75d-4610-a5e7-021f1523d0e0" name="Count the cost" isLeaf="false">
+            <elementDefinition Id="1116bfd3-1be9-4eab-b759-bfec67817f68" />
+            <flowNodeTargets>
+              <controlFlow Id="55a8074c-536f-4149-b376-6b12ffd1969d" isLeaf="false">
+                <opaqueActionMoniker Id="3a8000ab-6416-412e-9584-a3ea3ace42db" LastKnownName="Inform the client" />
+                <elementDefinition Id="7969dabc-69eb-4b0a-b6c0-7caf3c9398b2" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="3a8000ab-6416-412e-9584-a3ea3ace42db" name="Inform the client" isLeaf="false">
+            <elementDefinition Id="8de8a633-0dbc-4935-89bb-11f30c59afcd" />
+            <flowNodeTargets>
+              <controlFlow Id="8d4a389d-dcb9-40e6-a5bc-2b4cfacecdc3" isLeaf="false">
+                <decisionNodeMoniker Id="fe94adf2-c1ef-4027-b6d6-9e29650a4d4b" LastKnownName="Decision2" />
+                <elementDefinition Id="476cdd2a-7741-43cb-b51a-85ad05af5633" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="fe94adf2-c1ef-4027-b6d6-9e29650a4d4b" name="Decision2" isLeaf="false">
+            <elementDefinition Id="f521b807-31d1-41b7-b18c-1ac80ee5db37" />
+            <flowNodeTargets>
+              <controlFlow Id="24af079f-81d9-409c-9f0a-99aad98f2cf8" guard="Get confirmation  from the client" isLeaf="false">
+                <opaqueActionMoniker Id="015f0714-ebc8-489f-9377-53c49fa72cb3" LastKnownName="Get money from the client" />
+                <elementDefinition Id="e8b16e3b-6db5-4da4-88c5-dae44d402a6e" />
+              </controlFlow>
+              <controlFlow Id="7a931171-2b2a-4fea-87bf-ea10fab0953e" guard="Get refusal from the client" isLeaf="false">
+                <opaqueActionMoniker Id="e0eb9234-d7bf-4dd4-b384-c89f4716c04f" LastKnownName="Thank the client for using the program" />
+                <elementDefinition Id="15613eee-8a05-4a7a-a9d5-7216676c00c6" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction Id="015f0714-ebc8-489f-9377-53c49fa72cb3" name="Get money from the client" isLeaf="false">
+            <elementDefinition Id="177775a1-3b4b-4580-8bbc-e8b0c03afb48" />
+            <flowNodeTargets>
+              <controlFlow Id="0188b7df-cf89-4bb5-a82b-9c585c665dab" isLeaf="false">
+                <opaqueActionMoniker Id="6e1437d5-0e36-42d3-952b-8d00a0cc1514" LastKnownName="Give the client a receipt" />
+                <elementDefinition Id="e04e88a6-cb14-4e6b-a23b-9c7a7ac86699" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="6e1437d5-0e36-42d3-952b-8d00a0cc1514" name="Give the client a receipt" isLeaf="false">
+            <elementDefinition Id="78266f91-d59d-4977-aad6-fc84b5e8e857" />
+            <flowNodeTargets>
+              <controlFlow Id="3abc0547-5505-4cbe-9f7e-366a52cded18" isLeaf="false">
+                <opaqueActionMoniker Id="a589fd62-8ecf-415e-a5c0-1ccc5e00d3db" LastKnownName="Send the order to the service department" />
+                <elementDefinition Id="1498dd10-3ec4-4661-9b74-29a95c1db216" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="a589fd62-8ecf-415e-a5c0-1ccc5e00d3db" name="Send the order to the service department" isLeaf="false">
+            <elementDefinition Id="b43f9f7f-0b20-4208-8f18-321e8587f713" />
+            <flowNodeTargets>
+              <controlFlow Id="ea88c450-a6c9-4491-9fba-9a0f38a589b7" isLeaf="false">
+                <opaqueActionMoniker Id="e0eb9234-d7bf-4dd4-b384-c89f4716c04f" LastKnownName="Thank the client for using the program" />
+                <elementDefinition Id="2f87ff11-9f91-4b0f-beeb-df380a060978" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="8f6a1214-2a0b-45a2-beb7-ef6ea3fc25b4" name="Inform what is not avaible at the moment" isLeaf="false">
+            <elementDefinition Id="95271f6f-7a25-4e17-93d8-b5f7f2706160" />
+            <flowNodeTargets>
+              <controlFlow Id="847c6847-2e05-4c25-98f5-30ff4ea63268" isLeaf="false">
+                <opaqueActionMoniker Id="b748cd76-86da-4b3f-96a4-ac9e7b18fcbe" LastKnownName="Get the order" />
+                <elementDefinition Id="01a9a23e-a235-45e3-a93d-75b0a969a922" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="e0eb9234-d7bf-4dd4-b384-c89f4716c04f" name="Thank the client for using the program" isLeaf="false">
+            <elementDefinition Id="7f6f0a81-25ad-43bf-b038-1a59f3893908" />
+            <flowNodeTargets>
+              <controlFlow Id="a29aa297-49ae-4875-a614-1946c08dd503" isLeaf="false">
+                <activityFinalNodeMoniker Id="6dd059aa-e2ca-47f0-b390-51ca40cf2ac4" LastKnownName="ActivityFinal1" />
+                <elementDefinition Id="fe522074-f5e8-4470-be9d-8a6c6341da9e" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <activityFinalNode Id="6dd059aa-e2ca-47f0-b390-51ca40cf2ac4" name="ActivityFinal1" isLeaf="false">
+            <elementDefinition Id="7904a62e-f6e1-44ed-b1ec-1f42b2dc324f" />
+          </activityFinalNode>
+        </nodes>
+      </activity>
+    </activityRootModelHasActivity>
+  </packagedElements>
+  <package Id="b7f18c75-f6a8-4dbf-8155-99d93c3cecad" name="ModelingPizzaOrder">
+    <elementDefinition Id="1cd1a2cc-7377-48d7-a854-c7480f1e920c" />
+    <profileInstances>
+      <packageHasProfileInstances Id="ead1d726-cfcd-4e5a-8248-3fa6d4c364f8">
+        <profileInstance Id="3928d728-92c2-4676-a237-406341ef1e9b" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="e126ef48-b41a-49ea-8e86-c30233de986e">
+        <profileInstance Id="19eab3de-cf37-4ad3-ba96-56e0ff4c4ad5" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</activityRootModel>
